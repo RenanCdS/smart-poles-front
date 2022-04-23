@@ -1,0 +1,27 @@
+<div class="container h-100 d-flex">
+  <div class="panel login-banner w-70">
+  </div>
+
+  <div class="panel w-30 center-container">
+      <div class="d-flex fd-column">
+        <h2>Entrar</h2>
+        <h3>Por favor, insira as credenciais para entrar no sistema</h3>
+        <form [formGroup]="loginForm" class="d-flex fd-column">
+          <mat-form-field appearance="standard">
+            <mat-label>Username</mat-label>
+            <input name="username" formControlName="username" matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="standard">
+            <mat-label>Senha</mat-label>
+            <input name="password" formControlName="password" type="password" matInput>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" (click)="login()">
+            Entrar
+          </button>
+        </form>
+      </div>
+
+  </div>
+</div>

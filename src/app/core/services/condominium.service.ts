@@ -15,6 +15,10 @@ export class CondominiumService {
     return this.http.get<CondominiumResponse[]>(`${environment.apiUrl}/condominium`);
   }
 
+  getCondominiumById(condominiumId: string): Observable<CondominiumResponse> {
+    return this.http.get<CondominiumResponse>(`${environment.apiUrl}/condominium/${condominiumId}`);
+  }
+
   deleteCondominium(condominiumId: string): Observable<any> {
     return this.http.delete(`${environment.apiUrl}/condominium/${condominiumId}`);
   }

@@ -15,6 +15,10 @@ export class PoleService {
     return this.http.get<PoleResponse[]>(`${environment.apiUrl}/pole`);
   }
 
+  getPoleByCondominiumId(condominiumId: string): Observable<PoleResponse[]> {
+    return this.http.get<PoleResponse[]>(`${environment.apiUrl}/pole/${condominiumId}`);
+  }
+
   deletePole(poleId: string): Observable<any> {
     return this.http.delete(`${environment.apiUrl}/pole/${poleId}`);
   }

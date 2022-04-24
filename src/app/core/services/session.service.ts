@@ -19,8 +19,11 @@ export class SessionService {
 
   isAdmin(): boolean {
     const claims = this.getTokenClaims();
-    console.log(claims);
     return claims.role === 'ADM';
+  }
+
+  getClaim(claimName: string): string {
+    return this.getTokenClaims()[claimName];
   }
 
   clearToken(): void {

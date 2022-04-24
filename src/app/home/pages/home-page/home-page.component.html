@@ -1,0 +1,12 @@
+<div class="default-container">
+  <h1>{{condominiumName}}</h1>
+  <div class="d-flex fd-column poles-container">
+    <ng-container *ngFor="let pole of poles">
+      <img *ngIf="!pole.isGateway" class="pole-img" src="/assets/imgs/pole.svg" />
+      <div *ngIf="pole.isGateway" class="d-flex w-50 justify-content-between">
+        <img class="pole-img" src="/assets/imgs/pole.svg" />
+        <img class="pole-img" src="/assets/imgs/centralizer.svg" />
+      </div>
+    </ng-container>
+  </div>
+</div>

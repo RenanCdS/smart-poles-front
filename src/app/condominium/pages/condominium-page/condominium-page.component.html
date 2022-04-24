@@ -1,24 +1,20 @@
 <div>
   <mat-toolbar>
-    <span>Postes</span>
+    <span>Condomínios</span>
   </mat-toolbar>
    <div class="accordion-container">
-    <mat-accordion *ngFor="let pole of poles">
+    <mat-accordion *ngFor="let condominium of condominiums">
       <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            <span class="mr-1"><b>Id do poste: </b></span> {{pole.id}}
+            {{condominium.name}}
           </mat-panel-title>
-          <mat-panel-description>
-            {{pole.condominium?.name}}
-          </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="d-flex justify-content-between">
-          <p>{{pole.isGateway ? 'É gateway' : 'Não é gateway'}}</p>
-          <p>Criado em: {{pole.createdAt}}</p>
-          <p>Condomínio: {{pole.condominiumId}}</p>
+          <p>{{condominium.city}}</p>
+          <p>Criado em: {{condominium.createdAt}}</p>
           <div>
-            <button mat-button (click)="deletePole(pole.id)">
+            <button mat-button (click)="deleteCondominium(condominium.id)">
               <mat-icon>delete</mat-icon>
             </button>
             <button mat-button>

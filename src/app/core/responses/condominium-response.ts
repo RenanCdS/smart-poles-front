@@ -3,4 +3,5 @@ export interface CondominiumResponse {
   name: string;
   city: string;
   image: string;
+  createdAt: string;
 }

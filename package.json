@@ -2,6 +2,7 @@
   "name": "smart-poles-front",
   "version": "0.0.0",
   "scripts": {
+    "start-with-api": "ng serve && cd ../SmartPoles/SmartPoles.API && dotnet run",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

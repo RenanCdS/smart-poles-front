@@ -1,14 +1,13 @@
 <div>
   <mat-toolbar color="primary">
     <div class="d-flex justify-content-between w-100">
-        <span>Smart poles</span>
+        <span [routerLink]="['/home']"><a>Smart poles</a></span>
         <div>
           <ng-container *ngIf="isAdmin">
-            <button mat-button class="button-link">Condomínios</button>
-            <button mat-button class="button-link">Postes</button>
-            <button mat-button class="button-link">Usuários</button>
+            <button mat-button [routerLink]="['/condominios']" class="button-link">Condomínios</button>
+            <button mat-button [routerLink]="['/postes']" class="button-link">Postes</button>
+            <button mat-button [routerLink]="['/usuarios']" class="button-link">Usuários</button>
           </ng-container>
-
           <button mat-button class="button-link" (click)="logout()">Sair</button>
         </div>
     </div>

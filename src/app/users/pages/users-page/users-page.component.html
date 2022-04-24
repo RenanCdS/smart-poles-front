@@ -1,0 +1,29 @@
+<div>
+  <mat-toolbar>
+    <span>Usuários</span>
+  </mat-toolbar>
+
+  <div class="accordion-container">
+    <mat-accordion>
+      <mat-expansion-panel hideToggle *ngFor="let user of users">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{user.username}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="d-flex justify-content-between">
+          <p>{{user.condominium.name}}</p>
+          <p>Criado em: {{user.createdAt}}</p>
+          <div>
+            <button mat-button (click)="deleteUser(user.username)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-button>
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

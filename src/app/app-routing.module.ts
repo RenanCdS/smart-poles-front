@@ -14,6 +14,14 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'postes',
+        loadChildren: () => import('./poles/poles.module').then(m => m.PolesModule)
+      },
+      {
+        path: 'usuarios',
+        loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
       }
     ]
   }

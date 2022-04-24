@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EMPTY } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { AuthenticationRequest } from 'src/app/core/requests/authentication-request';
 import { AuthenticationResponse } from 'src/app/core/responses/authentication-response';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { SessionService } from 'src/app/core/services/session.service';
 
 @Component({
   selector: 'app-login-page',
@@ -14,7 +16,9 @@ import { AuthenticationService } from 'src/app/core/services/authentication.serv
 export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
   constructor(private readonly fb: FormBuilder,
-    private readonly authenticationService: AuthenticationService) { }
+    private readonly authenticationService: AuthenticationService,
+    private readonly sessionService: SessionService,
+    private readonly router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -45,9 +49,8 @@ export class LoginPageComponent implements OnInit {
       })
     ).subscribe({
       next: token => {
-        alert(token);
-        // this.sessionService.authToken = token;
-        // this.router.navigate(['/home']);
+        this.sessionService.saveToken(token);
+        this.router.navigate(['/home']);
       },
       complete: () => {
         this.loginForm.reset();

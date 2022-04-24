@@ -1,0 +1,17 @@
+<div>
+  <mat-toolbar color="primary">
+    <div class="d-flex justify-content-between w-100">
+        <span>Smart poles</span>
+        <div>
+          <ng-container *ngIf="isAdmin">
+            <button mat-button class="button-link">Condomínios</button>
+            <button mat-button class="button-link">Postes</button>
+            <button mat-button class="button-link">Usuários</button>
+          </ng-container>
+
+          <button mat-button class="button-link" (click)="logout()">Sair</button>
+        </div>
+    </div>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>

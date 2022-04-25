@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { TokenGuard } from './core/guards/token.guard';
 import { ContainerPageComponent } from './core/pages/container-page/container-page.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   {
     path: '',
     component: ContainerPageComponent,
+    canActivate: [TokenGuard],
     children: [
       {
         path: 'home',

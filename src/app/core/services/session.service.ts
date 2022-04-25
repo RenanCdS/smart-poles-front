@@ -30,6 +30,19 @@ export class SessionService {
     localStorage.removeItem(this.TOKEN);
   }
 
+  isTokenValid(): boolean {
+    const token = this.getToken();
+    if (!token) return false;
+
+    const decodedToken: any = jwt_decode(token);
+    const expiration = new Date(decodedToken.exp);
+
+    console.log(expiration.getTime() * 1000);
+    console.log(Date.now());
+
+    return expiration.getTime() * 1000 > Date.now();
+  }
+
   private getTokenClaims(): any {
     const token = this.getToken();
     return jwt_decode(token);

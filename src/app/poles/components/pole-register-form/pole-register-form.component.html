@@ -1,0 +1,24 @@
+<div>
+  <form [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Condominio</mat-label>
+      <mat-select formControlName="condominium">
+        <mat-option *ngFor="let condominium of condominiums" [value]="condominium.id">{{condominium.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>É gateway ?</div>
+    <mat-radio-group
+      formControlName="isGateway"
+      class="d-flex justify-content-between mb-1">
+      <mat-radio-button [value]="true">
+        Sim
+      </mat-radio-button>
+       <mat-radio-button [value]="false">
+        Não
+      </mat-radio-button>
+    </mat-radio-group>
+    <div>
+      <button mat-raised-button color="primary" (click)="registerPole()">Cadastrar</button>
+    </div>
+  </form>
+</div>

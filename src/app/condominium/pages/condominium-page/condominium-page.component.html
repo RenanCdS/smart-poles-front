@@ -17,12 +17,15 @@
             <button mat-button (click)="deleteCondominium(condominium.id)">
               <mat-icon>delete</mat-icon>
             </button>
-            <button mat-button>
+            <button mat-button [routerLink]="['/condominios/atualizar', condominium.id]">
               <mat-icon>edit</mat-icon>
             </button>
           </div>
         </div>
       </mat-expansion-panel>
     </mat-accordion>
+    <div class="mt-1">
+      <button mat-raised-button class="f-right" color="primary" [routerLink]="['/condominios/registro']">Cadastrar</button>
+    </div>
   </div>
 </div>

@@ -25,7 +25,6 @@ export class UserUpdatePageComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       name: this.fb.control('', [Validators.required]),
-      username: this.fb.control('', [Validators.required]),
       condominium: this.fb.control('', [Validators.required]),
       role: this.fb.control('', [Validators.required]),
     });
@@ -35,7 +34,6 @@ export class UserUpdatePageComponent implements OnInit {
       .subscribe(([condominiums, user]) => {
         this.condominiums = condominiums;
         this.form.get('name').setValue(user.name);
-        this.form.get('username').setValue(user.username);
         this.form.get('condominium').setValue(user.condominium.id);
         this.form.get('role').setValue(user.role);
       });
@@ -52,7 +50,6 @@ export class UserUpdatePageComponent implements OnInit {
 
     const updateUserRequest: UpdateUserRequest = {
       condominiumId: this.form.controls.condominium.value,
-      username: this.form.controls.username.value,
       name: this.form.controls.name.value,
       role: +this.form.controls.role.value,
     };

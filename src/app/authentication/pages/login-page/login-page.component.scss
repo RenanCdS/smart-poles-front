@@ -1,7 +1,9 @@
 .panel {
   height: 100vh;
   &.login-banner {
-    background-image: linear-gradient(to top left,rgba(9, 9, 121, 100), rgba(0, 212, 255, 100));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to top left,rgba(9, 9, 121, 0.4), rgba(0, 212, 255, 0.4)), url(../../../../assets/imgs/background.jpg);
   }
 }
 

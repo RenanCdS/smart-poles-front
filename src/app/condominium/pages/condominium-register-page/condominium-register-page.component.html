@@ -1,0 +1,17 @@
+<div class="default-container">
+  <form [formGroup]="form">
+    <div>
+      <mat-form-field appearance="standard">
+        <mat-label>Nome</mat-label>
+        <input name="name" formControlName="name" type="name" matInput>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="standard">
+          <mat-label>Cidade</mat-label>
+          <input name="city" formControlName="city" type="text" matInput>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="registerCondominium()">Cadastrar</button>
+  </form>
+</div>

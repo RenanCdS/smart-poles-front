@@ -1,27 +1,19 @@
-# SmartPolesFront
+# SmartPoles FRONT
+        Aplicação front que controla e gerencia os cluster de postes inteligentes dentro de um condomínio. Para tal existe registros de usuários, condomínios e postes. O usuário pode ter uma de duas roles:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
+- NORMAL => Tem acesso à visualização do cluster de postes inteligentes vinculados ao condomínio do usuário
+- ADM => Capaz de gerenciar todos os recursos do sistema (postes, condominios e outros usuários)
 
-## Development server
+  A aplicação foi desenvolvida em Angular. É necessário instalar o [nodejs](https://nodejs.org/en/) para rodar a aplicação.
+  Com o node instalado entre na pasta onde o arquivo "package.json" e execute o comando "**npm install**". Com isso as dependências do projeto serão baixadas. Em seguida, ainda no diretório que o package.json está, execute o comando "**npm start**". A aplicação rodará em **localhost:4200**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  Esse front consome a API que está no seguinte repositório [Backend](https://github.com/RenanCdS/smart-poles-back).
 
-## Code scaffolding
+  **EC9 - FESA**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  ## Integrantes
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  RACHEL MOREIRA 081180045  
+  RENAN CASTRO 081180029  
+  WELLISON SOUSA 081180040  
+  WESLEY ROGÉRIO 081180035  
